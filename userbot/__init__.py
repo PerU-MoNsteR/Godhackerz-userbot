@@ -107,6 +107,9 @@ if bool(ENV):
 
     # Clean Welcome
     CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
+    #for assistant
+    OWNER_ID = os.environ.get("OWNER_ID", None)
+
 
     # Last.fm Module
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
