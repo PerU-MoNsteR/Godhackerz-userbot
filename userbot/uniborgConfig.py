@@ -112,6 +112,30 @@ if ENV:
         OFFICAL_UPSTREAM_REPO = os.environ.get(
             "OFFICAL_UPSTREAM_REPO", "https://github.com/rohithaditya/Godhackerz-userbot"
         )
+    BIO_MSG = os.environ.get("ALIVE_MSG", None)
+    TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "Eliza")
+    HASH_TO_TORRENT_API = os.environ.get(
+        "HASH_TO_TORRENT_API", "https://example.com/torrent/{}"
+    )
+    G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP", -1001198699233))
+    # TG API limit. An album can have atmost 10 media!
+    GOOGLE_SEARCH_COUNT_LIMIT = int(os.environ.get("GOOGLE_SEARCH_COUNT_LIMIT", 9))
+    TG_GLOBAL_ALBUM_LIMIT = int(os.environ.get("TG_GLOBAL_ALBUM_LIMIT", 9))
+    SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
+    WHITELIST_USERS = set(int(x) for x in os.environ.get("WHITELIST_USERS", "").split())
+    BLACKLIST_USERS = set(int(x) for x in os.environ.get("BLACKLIST_USERS", "").split())
+    DEVLOPERS = set(int(x) for x in os.environ.get("DEVLOPERS", "").split())
+    OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "").split())
+    SUPPORT_USERS = set(int(x) for x in os.environ.get("SUPPORT_USERS", "").split())
+    # Very Stream
+    VERY_STREAM_LOGIN = os.environ.get("VERY_STREAM_LOGIN", None)
+    VERY_STREAM_KEY = os.environ.get("VERY_STREAM_KEY", None)
+    SLAP_USERNAME = os.environ.get("SLAP_USERNAME", None)
+    CHANNEL_ID = int(os.environ.get("CHANNEL_ID", -100))
+    MONGO_URI = os.environ.get("MONGO_URI", None)
+    TAG_FEATURE = os.environ.get("TAG_FEATURE", "ENABLE")
+    ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
+
 else:
     class Config(object):
         DB_URI = None
