@@ -16,9 +16,6 @@ from var import Var
 
 from .functions import elizafunction as topfunc
 
-
-
-
 """import os
 import sys
 from telethon.sessions import StringSession
@@ -63,14 +60,16 @@ if bool(ENV):
             level=DEBUG,
         )
     else:
-        basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-                    level=INFO)
+        basicConfig(
+            format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=INFO
+        )
     LOGS = getLogger(__name__)
 
     # Check if the config was edited by using the already used variable.
     # Basically, its the 'virginity check' for the config file ;)
     CONFIG_CHECK = os.environ.get(
-        "___________PLOX_______REMOVE_____THIS_____LINE__________", None)
+        "___________PLOX_______REMOVE_____THIS_____LINE__________", None
+    )
 
     if CONFIG_CHECK:
         LOGS.info(
@@ -129,7 +128,7 @@ if bool(ENV):
 
     # Clean Welcome
     CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
-    #for assistant
+    # for assistant
     OWNER_ID = os.environ.get("OWNER_ID", None)
     # SUDOUSERS
     SUDO_USERS = os.environ.get("SUDO_USERS", None)
@@ -150,10 +149,12 @@ if bool(ENV):
     LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
     LASTFM_PASS = pylast.md5(LASTFM_PASSWORD_PLAIN)
     if not LASTFM_USERNAME == "None":
-        lastfm = pylast.LastFMNetwork(api_key=LASTFM_API,
-                                      api_secret=LASTFM_SECRET,
-                                      username=LASTFM_USERNAME,
-                                      password_hash=LASTFM_PASS)
+        lastfm = pylast.LastFMNetwork(
+            api_key=LASTFM_API,
+            api_secret=LASTFM_SECRET,
+            username=LASTFM_USERNAME,
+            password_hash=LASTFM_PASS,
+        )
     else:
         lastfm = None
 
@@ -162,22 +163,19 @@ if bool(ENV):
     G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
     G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
     GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
-    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY",
-                                         "./downloads")
+    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./downloads")
 else:
     # Put your ppe vars here if you are using local hosting
     PLACEHOLDER = None
 
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
 # and giving them correct perms to work properly.
-if not os.path.exists('bin'):
-    os.mkdir('bin')
+if not os.path.exists("bin"):
+    os.mkdir("bin")
 
 binaries = {
-    "https://raw.githubusercontent.com/yshalsager/megadown/master/megadown":
-    "bin/megadown",
-    "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py":
-    "bin/cmrudl"
+    "https://raw.githubusercontent.com/yshalsager/megadown/master/megadown": "bin/megadown",
+    "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py": "bin/cmrudl",
 }
 
 for binary, path in binaries.items():
@@ -194,4 +192,3 @@ CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
 # End of PaperPlaneExtended Support Vars
-

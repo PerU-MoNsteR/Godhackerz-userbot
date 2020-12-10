@@ -20,15 +20,13 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
 COLLECTION_STRING = [
-                  "tron-background"
-		  "iron-man-jarvis-animated-wallpaper"
-		  "batcomputer-wallpaper"
+    "tron-background" "iron-man-jarvis-animated-wallpaper" "batcomputer-wallpaper"
 ]
 # ----------------For @Godhackerzuserbot-------------------------------------------------------------------Wrote BY @Rohithaditya-----------------------------------------
+
 
 async def animepp():
 
@@ -57,6 +55,7 @@ async def animepp():
 
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
+
 # ----------------For @Godhackerzuserbot-------------------------------------------------------------------Wrote BY @Rohithaditya-----------------------------------------
 @borg.on(admin_cmd(pattern="sethackerdp ?(.*)"))
 async def main(event):
@@ -76,5 +75,6 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
 
         await asyncio.sleep(600)  # Edit this to your required needs
+
 
 # ----------------For @Godhackerzuserbot-------------------------------------------------------------------Wrote BY @Rohithaditya-----------------------------------------

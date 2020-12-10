@@ -1,7 +1,7 @@
 # Fully Written by @HeisenbergTheDanger (Keep credits else gay)
 # Permission Seeked By @rohithaditya - Approved
-# Thanks To Telebot 
-# Full Credits Are Approved 
+# Thanks To Telebot
+# Full Credits Are Approved
 # © @Godhackerzuserbot
 # --------------------------- Asked Xditya And Rewrote This None Idiot Can Claim This As Urs -------------------
 #    TeleBot - UserBot
@@ -210,7 +210,7 @@ async def _(event):
 # Written by @HeisenbergTheDanger
 
 
-@borg.on(admin_cmd("badd ?(.*)")) 
+@borg.on(admin_cmd("badd ?(.*)"))
 async def add_ch(event):
     if event.fwd_from:
         return

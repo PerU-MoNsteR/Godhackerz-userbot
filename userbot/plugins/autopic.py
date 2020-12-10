@@ -1,6 +1,6 @@
 # Licensed Under GPU 2.0 "https://github.com/rohithaditya/Godhackerz-userbot/blob/main/LICENSE"
 # © @Godhackerzuserbot
-# If You Chnge You Are Blitch son 
+# If You Chnge You Are Blitch son
 import asyncio
 import os
 import shutil
@@ -44,4 +44,3 @@ async def autopic(event):
             await asyncio.sleep(60)
         except:
             return
-

@@ -38,7 +38,7 @@ async def gspider(userbot):
     except:
         return await friday.edit(f"**You Cant Use In Pvt Chats // Group!**")
     if user:
-        if user.id == 1207066133 :
+        if user.id == 1207066133:
             return await friday.edit(
                 f"**Didn't , Your Father Teach You ? That You Cant Gban Dev**"
             )

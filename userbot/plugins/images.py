@@ -2,10 +2,12 @@
 Syntax: .img <Name>"""
 
 
-from google_images_download import google_images_download
 import os
 import shutil
 from re import findall
+
+from google_images_download import google_images_download
+
 from userbot.utils import admin_cmd
 
 
@@ -27,7 +29,7 @@ async def img_sampler(event):
         "keywords": query,
         "limit": lim,
         "format": "jpg",
-        "no_directory": "no_directory"
+        "no_directory": "no_directory",
     }
 
     # passing the arguments to the function

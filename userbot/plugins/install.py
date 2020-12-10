@@ -1,13 +1,15 @@
-# Plugin To Install Plugins 
-# We Are Not Responsible If Userbot Got Crashed 
+# Plugin To Install Plugins
+# We Are Not Responsible If Userbot Got Crashed
 # © @Godhackerzuserbot
 
-from userbot.utils import admin_cmd, load_module, remove_plugin
 import asyncio
 import os
-from datetime import datetime
 from pathlib import Path
+
+from userbot.utils import admin_cmd, load_module
+
 DELETE_TIMEOUT = 5
+
 
 @borg.on(admin_cmd(pattern="load", outgoing=True))
 async def install(event):

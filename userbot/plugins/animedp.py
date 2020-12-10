@@ -6,10 +6,10 @@ Usage .actressdp I'm Not Responsible For Any Ban caused By This
 # (C) @Godhackerzuserbot
 # ANIME DP
 # GOT THIS FROM TELEBOT
-# KEEP CREDITS IF YOU KANG 
+# KEEP CREDITS IF YOU KANG
 # SLIHTLY EDITED BY @Rohithaditya
 # (C) TELEBOT @Xditya
-# KEEP ABove Lines 
+# KEEP ABove Lines
 
 import asyncio
 import os

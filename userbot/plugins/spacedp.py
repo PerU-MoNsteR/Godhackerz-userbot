@@ -20,7 +20,6 @@ import urllib
 import requests
 from telethon.tl import functions
 
-from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
 COLLECTION_STRING = [
@@ -28,9 +27,10 @@ COLLECTION_STRING = [
     "supernatural-wallpaper-2018",
     "4k-aurora-wallpaper",
     "supernatural-screensavers-and-wallpaper-dean",
-	"jarvis-iphone-wallpaper"
+    "jarvis-iphone-wallpaper",
 ]
 # ----------------For @Godhackerzuserbot-------------------------------------------------------------------Wrote BY @Rohithaditya-----------------------------------------
+
 
 async def animepp():
 
@@ -59,6 +59,7 @@ async def animepp():
 
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
+
 # ----------------For @Godhackerzuserbot-------------------------------------------------------------------Wrote BY @Rohithaditya-----------------------------------------
 @borg.on(admin_cmd(pattern="setspcedp ?(.*)"))
 async def main(event):
@@ -78,5 +79,6 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
 
         await asyncio.sleep(600)  # Edit this to your required needs
+
 
 # ----------------For @Godhackerzuserbot-------------------------------------------------------------------Wrote BY @Rohithaditya-----------------------------------------

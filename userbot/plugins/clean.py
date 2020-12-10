@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 # lots of luv to MrConfused To Add Sudo in it and fix
-# Thanks To Friday For This Plugin 
+# Thanks To Friday For This Plugin
 # © @Godhackerzuserbot
 
 """Cmd= `.clean`
@@ -10,7 +10,6 @@ Usage: Searches for deleted accounts in a groups and channels.
 Use .clean clean to remove deleted accounts from the groups and channels.
 \nPorted by ©[NIKITA](t.me/kirito6969) and ©[EYEPATCH](t.me/NeoMatrix90)"""
 
-import asyncio
 from asyncio import sleep
 
 from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
@@ -79,7 +78,9 @@ async def rm_deletedacc(show):
 
     # Well
     if not admin and not creator:
-        await show.edit("` Master You Are not an admin here! if Any Error Go Check Support Group Master`")
+        await show.edit(
+            "` Master You Are not an admin here! if Any Error Go Check Support Group Master`"
+        )
         return
 
     await show.edit("`Deleting deleted accounts...\nOh I can do that Na Master !`")
@@ -119,6 +120,7 @@ async def rm_deletedacc(show):
             f"Cleaned **{del_u}** deleted account(s)  Master !!\
             \nCHAT: {show.chat.title}(`{show.chat_id}`)",
         )
+
 
 CMD_HELP.update(
     {

@@ -1,7 +1,4 @@
-from telethon import events
-import subprocess
 import asyncio
-import time
 
 
 @command(pattern="^.cmds", outgoing=True)

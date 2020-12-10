@@ -10,7 +10,6 @@
 from random import randint
 from time import sleep
 
-
 from userbot.events import register
 
 
@@ -20,7 +19,13 @@ async def randomise(items):
     if not items.text[0].isalpha() and items.text[0] not in ("/", "#", "@", "!"):
         itemo = (items.text[8:]).split()
         index = randint(1, len(itemo) - 1)
-        await items.edit("**Query: **\n`" + items.text[8:] + "`\n**Output: **\n`" + itemo[index] + "`")
+        await items.edit(
+            "**Query: **\n`"
+            + items.text[8:]
+            + "`\n**Output: **\n`"
+            + itemo[index]
+            + "`"
+        )
 
 
 @register(outgoing=True, pattern="^.sleep( [0-9]+)?$")
@@ -42,11 +47,13 @@ async def sleepybot(time):
             sleep(counter)
 
 
-
 @register(outgoing=True, pattern="^.support$")
 async def bot_support(wannahelp):
     """ For .support command, just returns the group link. """
-    if not wannahelp.text[0].isalpha() and wannahelp.text[0] not in ("/", "#", "@", "!"):
+    if not wannahelp.text[0].isalpha() and wannahelp.text[0] not in (
+        "/",
+        "#",
+        "@",
+        "!",
+    ):
         await wannahelp.edit("Link Portal: @userbot_support")
-
-

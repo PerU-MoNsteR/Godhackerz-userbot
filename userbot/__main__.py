@@ -1,17 +1,15 @@
-from userbot import bot
-from sys import argv
-import sys
-from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 import os
-from telethon import TelegramClient
-from var import Var
-from userbot.utils import load_module, start_assistant
-from userbot import LOAD_PLUG, BOTLOG_CHATID, LOGS
 from pathlib import Path
-import asyncio
-import telethon.utils
+from sys import argv
 
-'''async def add_bot(bot_token):
+import telethon.utils
+from telethon import TelegramClient
+
+from userbot import bot
+from userbot.utils import load_module, start_assistant
+from var import Var
+
+"""async def add_bot(bot_token):
     await bot.start(bot_token)
     bot.me = await bot.get_me() 
     bot.uid = telethon.utils.get_peer_id(bot.me)
@@ -57,7 +55,7 @@ else:
     bot.run_until_disconnected()
 
 
-'''
+"""
 
 LOAD_USERBOT = os.environ.get("LOAD_USERBOT", True)
 LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)

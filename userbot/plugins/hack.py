@@ -5,16 +5,13 @@ Available Commands:
 .emoji :/
 .emoji -_-"""
 
-from telethon import events
 
 import asyncio
+
 from uniborg.util import admin_cmd
 
 
-
-
 @borg.on(admin_cmd(pattern=r"hack"))
-
 async def _(event):
 
     if event.fwd_from:
@@ -25,26 +22,25 @@ async def _(event):
 
     animation_ttl = range(0, 11)
 
-    #input_str = event.pattern_match.group(1)
+    # input_str = event.pattern_match.group(1)
 
-    #if input_str == "hack":
+    # if input_str == "hack":
 
     await event.edit("Hacking..")
 
     animation_chars = [
-        
-            "`Connecting To Hacked Private Server...`",
-            "`Target Selected.`",
-            "`Hacking... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Hacking... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Hacking... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",    
-            "`Hacking... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Hacking... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Hacking... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Hacking... 84%\n█████████████████████▒▒▒▒ `",
-            "`Hacking... 100%\n█████████HACKED███████████ `",
-            "`Targeted Account Hacked. Master \n\nPay 69$ To  My Master to Remove this hack..`"
-        ]
+        "`Connecting To Hacked Private Server...`",
+        "`Target Selected.`",
+        "`Hacking... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Hacking... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Hacking... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Hacking... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Hacking... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Hacking... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Hacking... 84%\n█████████████████████▒▒▒▒ `",
+        "`Hacking... 100%\n█████████HACKED███████████ `",
+        "`Targeted Account Hacked. Master \n\nPay 69$ To  My Master to Remove this hack..`",
+    ]
 
     for i in animation_ttl:
 

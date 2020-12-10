@@ -8,39 +8,23 @@ don't try to kang Without asking
 """
 
 import asyncio
-
 import sys
-
-from os import environ, execle, path, remove
-
+from os import path, remove
 from typing import Tuple
 
 from git import Repo
-
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-
-
 from userbot.utils import admin_cmd
-
-from userbot import CMD_HELP 
-
-
 
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
 
 HEROKU_API_KEY = Config.HEROKU_API_KEY or None
 
 
-
-
-
 requirements_path = path.join(
-
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
-
 )
-
 
 
 async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
@@ -49,22 +33,18 @@ async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
 
     args = shlex.split(cmd)
 
-    process = await asyncio.create_subprocess_exec(*args,
-
-                                                   stdout=asyncio.subprocess.PIPE,
-
-                                                   stderr=asyncio.subprocess.PIPE)
+    process = await asyncio.create_subprocess_exec(
+        *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+    )
 
     stdout, stderr = await process.communicate()
 
-    return (stdout.decode('utf-8', 'replace').strip(),
-
-            stderr.decode('utf-8', 'replace').strip(),
-
-            process.returncode,
-
-            process.pid)
-
+    return (
+        stdout.decode("utf-8", "replace").strip(),
+        stderr.decode("utf-8", "replace").strip(),
+        process.returncode,
+        process.pid,
+    )
 
 
 async def gen_chlog(repo, diff):
@@ -75,24 +55,15 @@ async def gen_chlog(repo, diff):
 
     for c in repo.iter_commits(diff):
 
-        ch_log += (
-
-            f"  Ã¢Â€Â¢ {c.summary} ({c.committed_datetime.strftime(d_form)}) <{c.author}>\n"
-
-        )
+        ch_log += f"  Ã¢Â€Â¢ {c.summary} ({c.committed_datetime.strftime(d_form)}) <{c.author}>\n"
 
     return ch_log
-
-
-
 
 
 async def print_changelogs(event, ac_br, changelog):
 
     changelog_str = (
-
         f"**New UPDATE available for [{ac_br}]:\n\nCHANGELOG:**\n`{changelog}`"
-
     )
 
     if len(changelog_str) > 4096:
@@ -104,13 +75,9 @@ async def print_changelogs(event, ac_br, changelog):
             file.write(changelog_str)
 
         await event.client.send_file(
-
             event.chat_id,
-
             "output.txt",
-
             reply_to=event.id,
-
         )
 
         remove("output.txt")
@@ -118,19 +85,12 @@ async def print_changelogs(event, ac_br, changelog):
     else:
 
         await event.client.send_message(
-
             event.chat_id,
-
             changelog_str,
-
             reply_to=event.id,
-
         )
 
     return True
-
-
-
 
 
 async def update_requirements():
@@ -140,13 +100,9 @@ async def update_requirements():
     try:
 
         process = await asyncio.create_subprocess_shell(
-
             " ".join([sys.executable, "-m", "pip", "install", "-r", reqs]),
-
             stdout=asyncio.subprocess.PIPE,
-
             stderr=asyncio.subprocess.PIPE,
-
         )
 
         await process.communicate()
@@ -158,16 +114,11 @@ async def update_requirements():
         return repr(e)
 
 
-
-
-
 async def deploy(event, repo, ups_rem, ac_br, txt):
 
     if HEROKU_API_KEY is not None:
 
         import heroku3
-
-
 
         heroku = heroku3.from_key(HEROKU_API_KEY)
 
@@ -178,11 +129,8 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if HEROKU_APP_NAME is None:
 
             await event.edit(
-
                 "`Please set up the` **HEROKU_APP_NAME** `Var`"
-
                 " to be able to deploy your userbot...`"
-
             )
 
             repo.__del__()
@@ -200,17 +148,13 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if heroku_app is None:
 
             await event.edit(
-
                 f"{txt}\n" "`Invalid Heroku credentials for deploying userbot dyno.`"
-
             )
 
             return repo.__del__()
 
         await event.edit(
-
             "`Userbot dyno build in progress, please wait until the process finishes it usually takes 4 to 5 minutes .`"
-
         )
 
         ups_rem.fetch(ac_br)
@@ -218,9 +162,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         repo.git.reset("--hard", "FETCH_HEAD")
 
         heroku_git_url = heroku_app.git_url.replace(
-
             "https://", "https://api:" + HEROKU_API_KEY + "@"
-
         )
 
         if "heroku" in repo.remotes:
@@ -248,9 +190,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if build.status == "failed":
 
             await event.edit(
-
                 "`Build failed!\n" "Cancelled or there were some errors...`"
-
             )
 
             await asyncio.sleep(5)
@@ -266,13 +206,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
     return
 
 
-
-
-
 @bot.on(admin_cmd(outgoing=True, pattern=r"shift$"))
-
-
-
 async def upstream(event):
 
     event = await event.edit("`Pulling the Godhackerzuserbot repo wait a sec ....`")

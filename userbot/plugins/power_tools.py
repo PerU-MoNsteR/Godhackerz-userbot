@@ -5,10 +5,9 @@ Available Commands:
 # This Source Code Form is subject to the terms of the GNU
 # General Public License, v.3.0. If a copy of the GPL was not distributed with this
 # file, You can obtain one at https://www.gnu.org/licenses/gpl-3.0.en.html
-from telethon import events
-import asyncio
 import os
 import sys
+
 from userbot.utils import admin_cmd
 
 
@@ -33,5 +32,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("😩😩😩😩😩Master U Switched Off Me Master 😞😞/n..Manually turn me on later On My Mother(I Mean Heroku)😑")
+    await event.edit(
+        "😩😩😩😩😩Master U Switched Off Me Master 😞😞/n..Manually turn me on later On My Mother(I Mean Heroku)😑"
+    )
     await borg.disconnect()

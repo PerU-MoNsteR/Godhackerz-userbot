@@ -1,23 +1,18 @@
-# Thanks To  @The_Siddharth_Nigam Who Told This Future 🔮 Thanks 
-from userbot import bot
-from telethon import events
-from userbot.utils import command, remove_plugin, load_module
-from var import Var
-import importlib
-from pathlib import Path
-from userbot import LOAD_PLUG
-import sys
-from userbot import ALIVE_NAME
+# Thanks To  @The_Siddharth_Nigam Who Told This Future 🔮 Thanks
 import asyncio
-import traceback
 import os
-import userbot.utils
 from datetime import datetime
+from pathlib import Path
+
+from userbot import ALIVE_NAME, bot
+from userbot.utils import command
 from userbot.utils import edit_or_reply as eor
+from userbot.utils import load_module, remove_plugin
 
 DELETE_TIMEOUT = 8
 thumb_image_path = "./resources/1207066133.png"
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "GodhackerzUserbot"
+
 
 @command(pattern="^.load", outgoing=True)
 async def install(event):
@@ -52,6 +47,7 @@ async def install(event):
             os.remove(downloaded_file_name)
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
+
 
 @command(pattern="^.give (?P<shortname>\w+)$", outgoing=True)
 async def send(event):
@@ -91,11 +87,16 @@ async def unload(event):
     shortname = event.pattern_match["shortname"]
     try:
         remove_plugin(shortname)
-        qwe = await eor(event, f"Master I Have Successfully unloaded {shortname} This Stupid Plugin")
+        qwe = await eor(
+            event, f"Master I Have Successfully unloaded {shortname} This Stupid Plugin"
+        )
     except Exception as e:
         await qwe.edit(
-            "Master I Have Successfully unloaded {shortname}\n{} This Plugin".format(shortname, str(e))
+            "Master I Have Successfully unloaded {shortname}\n{} This Plugin".format(
+                shortname, str(e)
+            )
         )
+
 
 @command(pattern="^.load (?P<shortname>\w+)$", outgoing=True)
 async def load(event):
