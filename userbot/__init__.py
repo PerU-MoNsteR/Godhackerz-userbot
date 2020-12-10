@@ -1,9 +1,30 @@
+import logging
 import os
+import sys
+import time
+from distutils.util import strtobool as sb
+from logging import DEBUG, INFO, basicConfig, getLogger
+
+from dotenv import load_dotenv
+from pylast import LastFMNetwork, md5
+from pySmartDL import SmartDL
+from requests import get
+from telethon import TelegramClient
+from telethon.sessions import StringSession
+
+from var import Var
+
+from .functions import elizafunction as topfunc
+
+
+
+
+"""import os
 import sys
 from telethon.sessions import StringSession
 from telethon import TelegramClient
 
-from var import Var
+from var import Var"""
 
 
 os.system("pip install --upgrade pip")
@@ -25,13 +46,13 @@ LOAD_PLUG = {}
 ENV = os.environ.get("ENV", False)
 """ PPE initialization. """
 
-from logging import basicConfig, getLogger, INFO, DEBUG
+"""from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
 import asyncio
 
 import pylast
 from pySmartDL import SmartDL
-from requests import get
+from requests import get    """
 # Bot Logs setup:
 if bool(ENV):
     CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
