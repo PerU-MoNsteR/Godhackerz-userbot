@@ -1,8 +1,3 @@
-from userbot import perudef
-
-perumusic = perudef.perumusic
-perumusicvideo = perudef.perumusicvideo
-
 import math
 import os
 import re
