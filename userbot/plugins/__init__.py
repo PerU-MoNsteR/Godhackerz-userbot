@@ -28,7 +28,7 @@ heroku_api = "https://api.heroku.com"
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 
-thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "thumb_image.jpg"
+thumb_image_path = Config.TEMP_DOWNLOAD_DIRECTORY + "thumb_image.jpg"
 
 PM_START = []
 
@@ -46,7 +46,7 @@ G_DRIVE_CLIENT_ID = Config.G_DRIVE_CLIENT_ID
 G_DRIVE_CLIENT_SECRET = Config.G_DRIVE_CLIENT_SECRET
 G_DRIVE_DATA = Config.G_DRIVE_DATA
 G_DRIVE_FOLDER_ID = Config.G_DRIVE_FOLDER_ID
-TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
+TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
 
 # spamwatch support
 if Config.SPAMWATCH_API:
