@@ -5,6 +5,7 @@ from telethon import TelegramClient
 
 from var import Var
 
+
 os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
     session_name = str(Var.STRING_SESSION)
@@ -109,7 +110,14 @@ if bool(ENV):
     CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
     #for assistant
     OWNER_ID = os.environ.get("OWNER_ID", None)
-
+    # SUDOUSERS
+    SUDO_USERS = os.environ.get("SUDO_USERS", None)
+    # CommandHandler
+    CMD_HNDLR = os.environ.get("CMD_HNDLR", ".")
+    SUDO_HNDLR = os.environ.get("SUDO_HNDLR", "!")
+    # time.py
+    COUNTRY = str(os.environ.get("COUNTRY", ""))
+    TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 
     # Last.fm Module
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
