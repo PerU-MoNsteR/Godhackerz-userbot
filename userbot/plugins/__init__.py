@@ -16,7 +16,7 @@ idgen = topfunc.id_generator
 
 # =================== CONSTANT ===================
 USERID = bot.uid
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Eliza"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "god"
 
 # mention user
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
